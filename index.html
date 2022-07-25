@@ -10,41 +10,43 @@
 
     <!-- Add link to Bootstrap CDN(Content Delivery Network) below (version 5.02): -->  
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link href="style.css" rel="stylesheet" type="text/css"/>
+    <link href="assets/css/styles.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 
-    <!--to creat a container-->
-
+    <!--to creat a container -->
+    <!--Test Comment-->
+<!--Row one holding header -->
   <div class="container text-center">
     <div class="row">
       <div class="col-12">
         <h1>To-Do List</h1>
       </div>
     </div>
-</div> 
+  </div> 
 
  <!--To create the form-->
-
-<form class="form-list p-4 bg-info">
+<!-- Row two holding input form-->
+<div class="row">
+  <form class="form-list p-4 bg-info">
   <div class="col-6">
     <label for="inputTaskname" class="form-label">Task Name:</label>
-    <input type="text" class="form-control" id="inputTaskname" placeholder="">
+    <input type="text" class="form-control" id="inputTaskName"  value="taskName" placeholder="">
   </div><br>
 
   <div class="col-6">
     <label for="inputTaskdescription" class="form-label">Task Description:</label>
-    <input type="text" class="form-control" id="inputTaskdescription" placeholder="">
+    <input type="text" class="form-control" id="inputTaskDescription" value="taskDescription" placeholder="">
   </div><br>
 
   <div class="col-md-6">
-    <label for="inputassignedto" class="form-label">Assigned To:</label>
-    <input type="text" class="form-control" id="inputassignedto" placeholder="">
+    <label for="inputAssignedto" class="form-label">Assigned To:</label>
+    <input type="text" class="form-control" id="inputAssignedTo" value="assignedTo" placeholder="">
   </div><br>
 
   <div class="col-md-4">
     <label for="inputStatus" class="form-label">Status:</label>
-    <select id="inputStatus" class="form-select">
+    <select id="inputStatus" class="form-select" value="status">
       <option selected>ToDo...</option>
       <option>Done</option>
       <option>In progress</option>
@@ -54,43 +56,42 @@
 
 <div class="col-3">
     <label class="font" for="DueDate" >Due Date:</label> <br>
-    <input type="date" id="selectduedate" name="DueDate" required>
+    <input type="date" id="selectDueDate" name="Due Date" value="" required>
   </div>
 
   <br>
 
-<a class="btn btn-primary">Add Task</a>
-
+  <div>  
+    <a class="btn btn-primary" id="addTask">Add Task</a>
+  </div><br> <br>
+    
+    </form>
     </div>
 
-</form>
-
-    
-                
-                    <div class="col-4">
-                        <div class="card">
-                            <div class="card-body">
-                  <div class="card-body text-dark bg-light">
-            <p class="card-text">Task Name:</p>
-            <p class="card-text">Task Description:</p>
-            <p class="card-text">Assigned To:</p>
-            <p class="card-text">Due Date:</p>
-            <p class="card-text">Status:</p>
-            <a href="#" class="btn btn-success"> Mark Done</a> 
-      <a href="#" class="btn btn-danger">delete</a>
-        </div>
-                              
-          
-       
+    <!--Row Three holding Task Card-->
+   <div class="row">
+      <div class="col-4">
+        <div class="card">
+          <div id="cardForm">
+            <div class="card-body text-dark bg-light">
+              <p class="card-text">Task Name:</p>
+              <p class="card-text">Task Description:</p>
+              <p class="card-text">Assigned To:</p>
+              <p class="card-text">Due Date:</p>
+              <p class="card-text">Status:</p>
+              <a href="#" class="btn btn-success"> Mark Done</a> 
+              <a href="#" class="btn btn-danger">delete</a>
+            </div>
+          </div>
         </div><br>
 
-                         
-                          
-                
-        </div>
+      </div>                    
+    </div> 
       </div>
 
-
-    <script src="./js/script.js"></script>
+    <script src="./js/taskManager.js"></script> 
+    <script src="./js/index.js"></script>
+    
+    
 </body>
 </html>
