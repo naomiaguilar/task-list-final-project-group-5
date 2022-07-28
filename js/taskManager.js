@@ -28,18 +28,36 @@
 
 
 
-//Task 5 Step2: The render method
+//Task 4 Step2: 
 
 class TaskManager {
-  constructor() {
+  constructor(currentId = 0) {
     this.tasks = [];
+    this.currentId = currentId;
     
+  }
+
+  addTask(name, description, assignedTo, dueDate, status) {
+    this.currentId++;
+    
+    //task4 step3 
+    const task = {
+      Id:`${this.currentId}`,
+      name:`${name}`,
+      description:`${description}`,
+      assignedTo:`${assignedTo}`,
+      dueDdate:`${dueDate}`,
+      status:`${status}`
+
+    }
+
+    this.tasks.push(task);
   }
 
   render() {
     const tasksHtmlList = [];
 
-    for (i=0; i< this.tasks.length; i++) {
+    for (let i=0; i< this.tasks.length; i++) {
       const task = this.tasks[i];
 
       const date = new Date(task.dueDate);

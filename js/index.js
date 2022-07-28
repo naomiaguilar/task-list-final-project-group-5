@@ -11,12 +11,12 @@ function validFormFieldInput(data) {
 }
 
 const inputTaskName = document.querySelector('#inputTaskName');
-const taskName = inputTaskName.value;
-console.log('taskName: '+taskName);
+const name = inputTaskName.value;
+console.log('name: '+name);
 
 const inputTaskDescription = document.querySelector('#inputTaskDescription');
-const taskDescription = inputTaskDescription.value;
-console.log('taskDescription: '+taskDescription);
+const description = inputTaskDescription.value;
+console.log('description: '+description);
 
 const inputAssignedTo = document.querySelector('#inputAssignedTo');
 const assignedTo = inputAssignedTo.value;
@@ -31,7 +31,16 @@ const dueDate = selectDueDate.value;
 console.log('dueDate: '+dueDate);
 
 
+
+//Task 4 Step2 Testing the code
+
+const tasks = new TaskManager()
+console.log(tasks);
+
+ tasks.addTask(name, description, assignedTo, dueDate, status)
+console.log(tasks);
+
 //Task 5 step 1 test the code
 
-const taskHtml = createTaskHtml('dish wash','The dish should be clean', 'CharSelBez', '20/07/2022', 'Done');
-console.log(taskHtml);
+const taskHtml = createTaskHtml(name, description, assignedTo, dueDate, status);
+console.log(tasks);
