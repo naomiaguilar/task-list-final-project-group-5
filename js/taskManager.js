@@ -22,6 +22,8 @@
     </div>                    
   </div>`
 
+  return html;
+
 }
 
 
@@ -30,7 +32,7 @@
 
 //Task 4 Step2: 
 
-class TaskManager {
+export default class TaskManager {
   constructor(currentId = 0) {
     this.tasks = [];
     this.currentId = currentId;
@@ -64,14 +66,15 @@ class TaskManager {
       const formattedDate = date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear(); 
 
       const taskHtml = createTaskHtml(task.name, task.description, task.assignedTo, formattedDate, task.status);
-
+      
+      
       // Push it to the tasksHtmlList array
       tasksHtmlList.push(taskHtml);
 
       
-    }
+    } 
 
-    const tasksHtml = tasksHtmlList.join('\n');
+    const tasksHtml = tasksHtmlList.join('\n'); 
 
     const tasksList = document.querySelector('#tasksList');
     tasksList.innerHTML = tasksHtml;
@@ -81,8 +84,4 @@ class TaskManager {
   }
 
   
-}
-
-
-
-
+} 
