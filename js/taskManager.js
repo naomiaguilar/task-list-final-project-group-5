@@ -1,9 +1,16 @@
+
+
+
+
+
+
 //Task 5
+
 //step1: create a function using template literals to return the HTML for each individual task
 
- let createTaskHtml = (name, description, assignedTo, dueDate, status) => {
+ function createTaskHtml(name, description, assignedTo, dueDate, status) {
 
-    const html = `<div class="row">
+  const html = `<div class="row">
     <div class="col-4">
       <div class="card">
         <div id="cardForm">
@@ -20,26 +27,46 @@
       </div><br>
 
     </div>                    
-  </div>`
+  </div>`;
 
+
+  return this.taskHtml
 }
 
 
 
 
 
-//Task 5 Step2: The render method
+//Task 4 Step2: 
 
 class TaskManager {
-  constructor() {
+  constructor(currentId = 0) {
     this.tasks = [];
+    this.currentId = currentId;
     
+  }
+
+  addTask(name, description, assignedTo, dueDate, status) {
+    this.currentId++;
+    
+    //task4 step3 
+    const task = {
+      Id:`${this.currentId}`,
+      name:`${name}`,
+      description:`${description}`,
+      assignedTo:`${assignedTo}`,
+      dueDdate:`${dueDate}`,
+      status:`${status}`
+
+    }
+
+    this.tasks.push(task);
   }
 
   render() {
     const tasksHtmlList = [];
 
-    for (i=0; i< this.tasks.length; i++) {
+    for (let i=0; i< this.tasks.length; i++) {
       const task = this.tasks[i];
 
       const date = new Date(task.dueDate);
