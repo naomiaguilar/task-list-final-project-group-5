@@ -48,7 +48,7 @@
       <option selected>ToDo...</option>
       <option>Done</option>
       <option>In progress</option>
-      <option>Not Started</option>
+      <option>Not Started</option>a
     </select>
   </div> <br>
 
@@ -60,7 +60,10 @@
   <br>
 
   <div>  
-    <a class="btn btn-primary" id="addTask">Add Task</a>
+    <button class="btn btn-primary" id="addTask" onclick="addTask()">Add Task</button>
+
+    
+    
   </div><br> <br>
     
     </form>
@@ -79,6 +82,11 @@
               <p class="card-text">Status:</p>
               <a href="#" class="btn btn-success"> Mark Done</a> 
               <a href="#" class="btn btn-danger">delete</a>
+
+
+
+        
+
             </div>
           </div>
         </div><br>
@@ -87,10 +95,12 @@
     </div> 
       </div>
 
+
     
     <script type ='module' src="./js/index.js"></script>
     
-    
+
+   
     
 </body>
 </html>

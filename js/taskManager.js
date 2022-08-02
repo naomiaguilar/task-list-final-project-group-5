@@ -1,9 +1,16 @@
+
+
+
+
+
+
 //Task 5
+
 //step1: create a function using template literals to return the HTML for each individual task
 
- let createTaskHtml = (name, description, assignedTo, dueDate, status) => {
+ function createTaskHtml(name, description, assignedTo, dueDate, status) {
 
-    const html = `<div class="row">
+  const html = `<div class="row">
     <div class="col-4">
       <div class="card">
         <div id="cardForm">
@@ -20,9 +27,9 @@
       </div><br>
 
     </div>                    
-  </div>`
+  </div>`;
+  return this.html;
 
-  return html;
 
 }
 
@@ -32,7 +39,9 @@
 
 //Task 4 Step2: 
 
-export default class TaskManager {
+
+export default class taskManager
+
   constructor(currentId = 0) {
     this.tasks = [];
     this.currentId = currentId;
