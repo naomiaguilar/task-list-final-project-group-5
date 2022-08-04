@@ -3,6 +3,8 @@
 
  let createTaskHtml = (name, description, assignedTo, dueDate, status) => {
 
+
+
     const html = `<div class="row">
     <div class="col-4">
       <div class="card">
@@ -62,8 +64,8 @@ export default class TaskManager {
     for (let i=0; i< this.tasks.length; i++) {
       const task = this.tasks[i];
 
-      const date = new Date(task.dueDate);
-      const formattedDate = date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear(); 
+      const date = new Date();
+      const formattedDate =   (date.getMonth() + 1) + '/' +date.getDate() + '/' + date.getFullYear(); 
 
       const taskHtml = createTaskHtml(task.name, task.description, task.assignedTo, formattedDate, task.status);
       
@@ -77,6 +79,7 @@ export default class TaskManager {
     const tasksHtml = tasksHtmlList.join('\n'); 
 
     const tasksList = document.querySelector('#tasksList');
+    
     tasksList.innerHTML = tasksHtml;
 
 
