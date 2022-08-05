@@ -5,6 +5,7 @@ import createTaskHtml from './taskManager.js';
 
 const task = new TaskManager();
 addTask.addEventListener('click', () => {
+    task.save();
 
     // Task 6 Step 2 Creating a Function
 
@@ -80,19 +81,30 @@ if(!inputTaskName.value){
 
 //Task 4 Step2 Testing the code
 
-const tasks = new TaskManager();
-console.log(tasks);
+//const tasks = new TaskManager();
+//console.log(tasks);
 
- tasks.addTask(name, description, assignedTo, dueDate, status);
-console.log(tasks);
+ task.addTask(name, description, assignedTo, dueDate, status);
+console.log(task);
 
 
-tasks.render();
+task.render();
 
 })
 
-
-
+//Task 7 step2 
+taskContainer.addEventListener('click', (event) => {
+    //console.log(event.target);
+    if(event.target.classList.contains('markAsDone')) {
+        const parentTask = event.target.parentElement.parentElement.parentElement.parentElement.parentElement;
+       console.log(parentTask.dataset.id);
+       let passId = +parentTask.dataset.id;
+       let task1 = task.getTaskById(passId);
+       task1.status = 'DONE';
+       task.render();
+       
+    }
+})
 
 
 
