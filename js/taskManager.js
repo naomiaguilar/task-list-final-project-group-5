@@ -1,4 +1,11 @@
+
+
+
+
+
+
 //Task 5
+
 //step1: create a function using template literals to return the HTML for each individual task
 
  let createTaskHtml = (name, description, assignedTo, dueDate, status, id) => {
@@ -23,9 +30,9 @@
       </div><br>
 
     </div>                    
-  </div>`
+  </div>`;
+  return this.html;
 
-  return html;
 
   n
 
@@ -38,7 +45,9 @@
 
 //Task 4 Step2: 
 
-export default class TaskManager {
+
+export default class taskManager{
+
   constructor(currentId = 0) {
     this.tasks = [];
     this.currentId = currentId;
@@ -112,5 +121,5 @@ export default class TaskManager {
 	 	localStorage.setItem("currentId", currentId);
 
   }
-  
-} 
+}
+
