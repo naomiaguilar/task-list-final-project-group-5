@@ -31,10 +31,11 @@
 
     </div>                    
   </div>`;
-  return this.html;
+  
+  return html;
 
 
-  n
+  
 
 
 }
@@ -46,7 +47,7 @@
 //Task 4 Step2: 
 
 
-export default class taskManager{
+export default class TaskManager{
 
   constructor(currentId = 0) {
     this.tasks = [];
