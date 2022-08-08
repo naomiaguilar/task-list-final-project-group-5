@@ -48,7 +48,7 @@
       <option selected>ToDo...</option>
       <option>Done</option>
       <option>In progress</option>
-      <option>Not Started</option>
+      <option>Not Started</option>a
     </select>
   </div> <br>
 
@@ -60,14 +60,26 @@
   <br>
 
   <div>  
-    <a class="btn btn-primary" id="addTask">Add Task</a>
+    <button class="btn btn-primary" id="addTask" >Add Task</button>
+
+    
+    
   </div><br> <br>
+
+  <!--
+  <div class="alert alert-danger" role="alert" id="dangerAlert">
+    A simple danger alert—check it out!
+  </div>
+-->
     
     </form>
     </div>
+  </div>
 
-    <!--Row Three holding Task Card-->
-   <div class="row">
+  <!--Row Three holding Task Card-->
+  
+  <div class="justify-center" id="taskContainer">
+   <div class="row" id="tasksList">
       <div class="col-4">
         <div class="card">
           <div id="cardForm">
@@ -77,8 +89,13 @@
               <p class="card-text">Assigned To:</p>
               <p class="card-text">Due Date:</p>
               <p class="card-text">Status:</p>
-              <a href="#" class="btn btn-success"> Mark Done</a> 
+              <a href="#" class="btn btn-success" id=" doneButton"> Mark Done</a> 
               <a href="#" class="btn btn-danger">delete</a>
+
+
+
+        
+
             </div>
           </div>
         </div><br>
@@ -87,10 +104,12 @@
     </div> 
       </div>
 
+
     
     <script type ='module' src="./js/index.js"></script>
     
-    
+
+   
     
 </body>
 </html>

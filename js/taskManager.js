@@ -1,9 +1,18 @@
+
+
+
+
+
+
 //Task 5
+
 //step1: create a function using template literals to return the HTML for each individual task
 
- let createTaskHtml = (name, description, assignedTo, dueDate, status) => {
+ let createTaskHtml = (name, description, assignedTo, dueDate, status, id) => {
 
-    const html = `<div class="row">
+
+
+    const html = `<div class="row" data-id=${id}>
     <div class="col-4">
       <div class="card">
         <div id="cardForm">
@@ -13,16 +22,21 @@
             <p class="card-text">${assignedTo}</p>
             <p class="card-text">${dueDate}</p>
             <p class="card-text">${status}</p>
-           <a href="#" class="btn btn-success"> Mark Done</a> 
-            <a href="#" class="btn btn-danger">delete</a>
+
+           <a href="#" class="btn markAsDone btn-success"> Mark Done</a> 
+            <a href="#" class="btn  btn-danger">delete</a>
           </div>
         </div>
       </div><br>
 
     </div>                    
-  </div>`
-
+  </div>`;
+  
   return html;
+
+
+  
+
 
 }
 
@@ -32,7 +46,9 @@
 
 //Task 4 Step2: 
 
-export default class TaskManager {
+
+export default class TaskManager{
+
   constructor(currentId = 0) {
     this.tasks = [];
     this.currentId = currentId;
@@ -53,6 +69,7 @@ export default class TaskManager {
 
     }
 
+    
     this.tasks.push(task);
   }
 
@@ -62,10 +79,10 @@ export default class TaskManager {
     for (let i=0; i< this.tasks.length; i++) {
       const task = this.tasks[i];
 
-      const date = new Date(task.dueDate);
-      const formattedDate = date.getDate() + '/' + (date.getMonth() + 1) + '/' + date.getFullYear(); 
-
-      const taskHtml = createTaskHtml(task.name, task.description, task.assignedTo, formattedDate, task.status);
+      const date = new Date();
+      const formattedDate =   (date.getMonth() + 1) + '/' +date.getDate() + '/' + date.getFullYear(); 
+      
+      const taskHtml = createTaskHtml(task.name, task.description, task.assignedTo, formattedDate, task.status, task.Id);
       
       
       // Push it to the tasksHtmlList array
@@ -77,11 +94,33 @@ export default class TaskManager {
     const tasksHtml = tasksHtmlList.join('\n'); 
 
     const tasksList = document.querySelector('#tasksList');
+    
     tasksList.innerHTML = tasksHtml;
 
 
   
   }
 
-  
-} 
+  getTaskById(taskId) {
+    let foundTask = this.tasks.filter(task => {
+      if(task.Id == taskId){ return task}
+        
+
+    })
+    console.log(foundTask);
+    return foundTask;
+  }
+
+  //Task 8 
+
+  save() {
+    const tasksJson = JSON.stringify(this.tasks);
+	 	localStorage.setItem("tasks", tasksJson);
+
+        // saves ID to localstorage
+	 	const currentId = this.currentId.toString();
+	 	localStorage.setItem("currentId", currentId);
+
+  }
+}
+
