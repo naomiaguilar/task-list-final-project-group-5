@@ -28,6 +28,8 @@
 
     </div>                    
   </div>`;
+
+  
   return this.html;
 
 
@@ -93,4 +95,3 @@ export default class taskManager
   }
 
   
-} 

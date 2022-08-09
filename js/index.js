@@ -1,16 +1,14 @@
-import TaskManager from './taskManager.js';
-import createTaskHtml from './taskManager.js';
+// Import the functions from taskManager.js here.
+//const task = require('./taskManager.js');
 
-//Task 4 step 4 intialize the TaskManager
 
-const task = new TaskManager;
-addTask.addEventListener('click', () => {
+//const newTaskNameInput = ['Washing dishes', 'Laundry', 'Cooking', 'Shopping', 'Mopping','Sweeping']
 
-    // Task 6 Step 2 Creating a Function
+// Task 6 Step 2 Creating a Function
 
 function validFormFieldInput(data) {
     
-}
+
 
 const inputTaskName = document.querySelector('#inputTaskName');
 const name = inputTaskName.value;
@@ -32,23 +30,23 @@ const selectDueDate = document.querySelector('#selectDueDate');
 const dueDate = selectDueDate.value;
 console.log('dueDate: '+dueDate);
 
-
+}
 
 //Task 4 Step2 Testing the code
 
-const tasks = new TaskManager();
+const tasks = new TaskManager()
 console.log(tasks);
 
- tasks.addTask(name, description, assignedTo, dueDate, status)
+ tasks.addTask(name, description, assignedTo, dueDate, status);
+console.log(tasks);
+
+//Task 5 step 1 test the code
+
+var taskHtml = createTaskHtml(name, description, assignedTo, dueDate, status);
 console.log(tasks);
 
 
-TaskManager.render;
-
-})
 
 
-
-
-
+const alert = document.getElementById("dangerAlert");
 
