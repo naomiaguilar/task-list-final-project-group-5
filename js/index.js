@@ -1,18 +1,25 @@
-import TaskManager from './taskManager.js';
-import createTaskHtml from './taskManager.js';
+// Import the functions from taskManager.js here.
+//const task = require('./taskManager.js');
 
-//Task 4 step 4 intialize the TaskManager
 
 const task = new TaskManager();
 addTask.addEventListener('click', () => {
     task.save();
 
-    // Task 6 Step 2 Creating a Function
+//const newTaskNameInput = ['Washing dishes', 'Laundry', 'Cooking', 'Shopping', 'Mopping','Sweeping']
+
+
+
 
 function validFormFieldInput(data) {
+
    
 
 }
+
+    
+
+
 
 
     
@@ -43,7 +50,11 @@ console.log('dueDate: '+dueDate);
 
 //Task 6 step 3. Showing Errors to users
 
-const warning = (field) => {
+}
+
+
+
+
 
     const alert = document.createElement('div');
     alert.classList.add('warning', 'absolute');
@@ -78,6 +89,18 @@ if(!inputTaskName.value){
 
 
 
+const tasks = new TaskManager()
+console.log(tasks);
+
+ tasks.addTask(name, description, assignedTo, dueDate, status);
+console.log(tasks);
+
+//Task 5 step 1 test the code
+
+var taskHtml = createTaskHtml(name, description, assignedTo, dueDate, status);
+console.log(tasks);
+
+
 
 //Task 4 Step2 Testing the code
 
@@ -107,4 +130,5 @@ taskContainer.addEventListener('click', (event) => {
 })
 
 
+const alert = document.getElementById("dangerAlert");
 
