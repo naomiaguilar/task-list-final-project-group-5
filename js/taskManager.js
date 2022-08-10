@@ -31,11 +31,16 @@
 
     </div>                    
   </div>`;
+
   
   return html;
 
 
   
+
+
+  
+ 
 
 
 }
@@ -101,6 +106,7 @@ export default class TaskManager{
   
   }
 
+
   getTaskById(taskId) {
     let foundTask = this.tasks.filter(task => {
       if(task.Id == taskId){ return task}
@@ -123,4 +129,5 @@ export default class TaskManager{
 
   }
 }
+
 
