@@ -59,18 +59,32 @@
 
   <br>
 
+
+  <div>  
+    <button class="btn btn-primary" id="addTask" >Add Task</button>
+
   <div> 
     <div class="alert alert-danger" role="alert" id="dangerAlert">Error!</div> 
     <button class="btn btn-primary" id="addTask" onclick="addTask()">Add Task</button>
 
+
    
   </div><br> <br>
+
+  <!--
+  <div class="alert alert-danger" role="alert" id="dangerAlert">
+    A simple danger alert—check it out!
+  </div>
+-->
     
     </form>
     </div>
+  </div>
 
-    <!--Row Three holding Task Card-->
-   <div class="row">
+  <!--Row Three holding Task Card-->
+  
+  <div class="justify-center" id="taskContainer">
+   <div class="row" id="tasksList">
       <div class="col-4">
         <div class="card">
           <div id="cardForm">
@@ -80,7 +94,7 @@
               <p class="card-text">Assigned To:</p>
               <p class="card-text">Due Date:</p>
               <p class="card-text">Status:</p>
-              <a href="#" class="btn btn-success"> Mark Done</a> 
+              <a href="#" class="btn btn-success" id=" doneButton"> Mark Done</a> 
               <a href="#" class="btn btn-danger">delete</a>
 
 
